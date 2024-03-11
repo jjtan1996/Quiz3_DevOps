@@ -25,7 +25,7 @@ pipeline {
 
             post {
                 always {
-                    jacoco(execPattern: 'target/jacoco.exec')
+                    jacoco execPattern: '**/target/jacoco.exec', classPattern: '**/classes', sourcePattern: '**/src/main/java'
                 }
             }
         }
