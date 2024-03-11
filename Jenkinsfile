@@ -12,12 +12,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                tool 'Maven'
                 bat 'mvn clean package'
             }
         }
 
         stage('Test with JaCoCo') {
             steps {
+                tool 'Maven'
                 bat 'mvn test jacoco:report'
             }
 
